@@ -7,7 +7,6 @@
 WowApi(self, client_id, client_secret, retry_conn_failures=False)
 ```
 
-
 ```python
 import os
 
