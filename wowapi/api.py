@@ -7,14 +7,14 @@ from requests.exceptions import RequestException
 from requests.packages.urllib3.util.retry import Retry
 
 from .exceptions import WowApiException, WowApiOauthException
-from .mixins import CommunityMixin, GameDataMixin, ProfileMixin
+from .mixins import GameDataMixin, ProfileMixin
 
 
 logger = logging.getLogger('wowapi')
 logger.addHandler(logging.NullHandler())
 
 
-class WowApi(CommunityMixin, GameDataMixin, ProfileMixin):
+class WowApi(GameDataMixin, ProfileMixin):
     """
     ```python
     import os
