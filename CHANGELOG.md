@@ -78,3 +78,9 @@
     * new character titles endpoint
 * Changes in community endpoints:
     * new `get_oauth_profile` endpoint
+
+## 3.1.0
+
+* Remove references to Community API.  It has now been retired by Blizzard.
+* Changes in game data endpoints:
+* Changes in profile endpoints:
