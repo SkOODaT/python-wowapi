@@ -15,7 +15,7 @@ class GameDataMixin:
         Data Achievement API - Returns an achievement category by id
         """
         filters['namespace'] = namespace
-        return self.get_resource('data/wow/achievement-category/{0}', region, *[id],  **filters)
+        return self.get_resource('data/wow/achievement-category/{0}', region, *[id], **filters)
 
     def get_achievement_index(self, region, namespace, **filters):
         """

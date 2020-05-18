@@ -1,7 +1,7 @@
 class CommunityMixin:
     """All Community API methods"""
 
-    def get_oauth_profile(self, region):
+    def get_oauth_profile(self, region, namespace, **filters):
         """
         World of Warcraft Profile API - data about wow profile for oauth token
 
@@ -9,7 +9,8 @@ class CommunityMixin:
         api.get_oauth_profile('us')
         ```
         """
-        return self.get_resource('wow/user/characters', region)
+        filters['namespace'] = namespace
+        return self.get_resource('profile/user/wow', region, **filters)
 
     def get_achievement(self, region, id, **filters):
         """
