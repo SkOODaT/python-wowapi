@@ -45,9 +45,10 @@ class TestCommunityMixin:
 
     def test_get_boss(self, response_mock):
         params = copy.deepcopy(self.params)
-        self.api.get_boss('us', 24723)
+        params['namespace'] = 'static-us'
+        self.api.get_boss('us', 'static-us', 24723)
         response_mock.assert_called_with(
-            'https://us.api.blizzard.com/wow/boss/24723', params=params)
+            'https://us.api.blizzard.com/data/wow/journal-encounter/24723', params=params)
 
     def test_get_realm_leaderboard(self, response_mock):
         params = copy.deepcopy(self.params)

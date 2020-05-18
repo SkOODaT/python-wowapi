@@ -35,11 +35,12 @@ class CommunityMixin:
         """
         return self.get_resource('data/wow/journal-encounter/index', region, **filters)
 		
-    def get_boss(self, region, id, **filters):
+    def get_boss(self, region, namespace, id, **filters):
         """
         Boss API - Boss details
         """
-        return self.get_resource('wow/boss/{0}', region, *[id], **filters)
+        filters['namespace'] = namespace
+        return self.get_resource('data/wow/journal-encounter/{0}', region, *[id], **filters)
 
     def get_realm_leaderboard(self, region, realm, **filters):
         """
