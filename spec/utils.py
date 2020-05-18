@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def get_spec_resource(spec_file):
     base_url = "https://develop.battle.net/api/pages/content/documentation/world-of-warcraft/"
-    url = f"{base_url}{spec_file}
+    url = f"{base_url}{spec_file}"
 
     response = requests.get(url)
     if response.ok:
