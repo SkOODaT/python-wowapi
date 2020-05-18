@@ -12,7 +12,7 @@ class CommunityMixin:
         filters['namespace'] = namespace
         return self.get_resource('profile/user/wow', region, **filters)
 
-    def get_achievement(self, region, id, **filters):
+    def get_achievement(self, region, namespace, id, **filters):
         """
         Achievement API
 
@@ -20,7 +20,8 @@ class CommunityMixin:
         api.get_achievement('us', 2144, locale='pt_BR')
         ```
         """
-        return self.get_resource('wow/achievement/{0}', region, *[id], **filters)
+        filters['namespace'] = namespace
+        return self.get_resource('data/wow/achievement/{0}', region, *[id], **filters)
 
     def get_auctions(self, region, realm_id, **filters):
         """

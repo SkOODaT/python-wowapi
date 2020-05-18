@@ -26,9 +26,10 @@ class TestCommunityMixin:
 
     def test_get_achievement(self, response_mock):
         params = copy.deepcopy(self.params)
-        self.api.get_achievement('us', 1234)
+        params['namespace'] = 'static-us'
+        self.api.get_achievement('us', 'static-us', 1234)
         response_mock.assert_called_with(
-            'https://us.api.blizzard.com/wow/achievement/1234', params=params)
+            'https://us.api.blizzard.com/data/wow/achievement/1234', params=params)
 
     def test_get_auctions(self, response_mock):
         params = copy.deepcopy(self.params)
