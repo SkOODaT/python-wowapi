@@ -21,18 +21,18 @@ class CommunityMixin:
         """
         return self.get_resource('wow/achievement/{0}', region, *[id], **filters)
 
-    def get_auctions(self, region, realm_slug, **filters):
+    def get_auctions(self, region, realm_id, **filters):
         """
         Auction API data status
         """
-        return self.get_resource('wow/auction/data/{0}', region, *[realm_slug], **filters)
+        return self.get_resource('data/wow/connected-realm/{0}/auctions', region, *[realm_id], **filters)
 
     def get_bosses(self, region, **filters):
         """
         Boss API - Master list of bosses
         """
-        return self.get_resource('wow/boss/', region, **filters)
-
+        return self.get_resource('data/wow/journal-encounter/index', region, **filters)
+		
     def get_boss(self, region, id, **filters):
         """
         Boss API - Boss details
