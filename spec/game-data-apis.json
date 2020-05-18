@@ -980,6 +980,36 @@
               "defaultValue": "en_US"
             }
           ]
+        },
+        {
+          "name": "Journal Instance Media",
+          "description": "Returns media for a journal instance by ID.",
+          "path": "/data/wow/media/journal-instance/{journalInstanceId}",
+          "httpMethod": "GET",
+          "cnRegion": false,
+          "parameters": [
+            {
+              "name": "{journalInstanceId}",
+              "description": "The ID of the journal instance.",
+              "type": "integer",
+              "required": true,
+              "defaultValue": 63
+            },
+            {
+              "name": "namespace",
+              "description": "The namespace to use to locate this document.",
+              "type": "string",
+              "required": true,
+              "defaultValue": "static-us"
+            },
+            {
+              "name": "locale",
+              "description": "The locale to reflect in localized data.",
+              "type": "string",
+              "required": false,
+              "defaultValue": "en_US"
+            }
+          ]
         }
       ]
     },
@@ -1798,6 +1828,191 @@
               "type": "integer",
               "required": true,
               "defaultValue": 0
+            },
+            {
+              "name": "namespace",
+              "description": "The namespace to use to locate this document.",
+              "type": "string",
+              "required": true,
+              "defaultValue": "static-us"
+            },
+            {
+              "name": "locale",
+              "description": "The locale to reflect in localized data.",
+              "type": "string",
+              "required": false,
+              "defaultValue": "en_US"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Profession API",
+      "methods": [
+        {
+          "name": "Professions Index",
+          "description": "Returns an index of professions.",
+          "path": "/data/wow/profession/index",
+          "httpMethod": "GET",
+          "cnRegion": false,
+          "parameters": [
+            {
+              "name": "namespace",
+              "description": "The namespace to use to locate this document.",
+              "type": "string",
+              "required": true,
+              "defaultValue": "static-us"
+            },
+            {
+              "name": "locale",
+              "description": "The locale to reflect in localized data.",
+              "type": "string",
+              "required": false,
+              "defaultValue": "en_US"
+            }
+          ]
+        },
+        {
+          "name": "Profession",
+          "description": "Returns a profession by ID.",
+          "path": "/data/wow/profession/{professionId}",
+          "httpMethod": "GET",
+          "cnRegion": false,
+          "parameters": [
+            {
+              "name": "{professionId}",
+              "description": "The ID of the profession.",
+              "type": "integer",
+              "required": true,
+              "defaultValue": 164
+            },
+            {
+              "name": "namespace",
+              "description": "The namespace to use to locate this document.",
+              "type": "string",
+              "required": true,
+              "defaultValue": "static-us"
+            },
+            {
+              "name": "locale",
+              "description": "The locale to reflect in localized data.",
+              "type": "string",
+              "required": false,
+              "defaultValue": "en_US"
+            }
+          ]
+        },
+        {
+          "name": "Profession Media",
+          "description": "Returns media for a profession by ID.",
+          "path": "/data/wow/media/profession/{professionId}",
+          "httpMethod": "GET",
+          "cnRegion": false,
+          "parameters": [
+            {
+              "name": "{professionId}",
+              "description": "The ID of the profession.",
+              "type": "integer",
+              "required": true,
+              "defaultValue": 164
+            },
+            {
+              "name": "namespace",
+              "description": "The namespace to use to locate this document.",
+              "type": "string",
+              "required": true,
+              "defaultValue": "static-us"
+            },
+            {
+              "name": "locale",
+              "description": "The locale to reflect in localized data.",
+              "type": "string",
+              "required": false,
+              "defaultValue": "en_US"
+            }
+          ]
+        },
+        {
+          "name": "Profession Skill Tier",
+          "description": "Returns a skill tier for a profession by ID.",
+          "path": "/data/wow/profession/{professionId}/skill-tier/{skillTierId}",
+          "httpMethod": "GET",
+          "cnRegion": false,
+          "parameters": [
+            {
+              "name": "{professionId}",
+              "description": "The ID of the profession.",
+              "type": "integer",
+              "required": true,
+              "defaultValue": 164
+            },
+            {
+              "name": "{skillTierId}",
+              "description": "The ID of the skill tier.",
+              "type": "integer",
+              "required": true,
+              "defaultValue": 2477
+            },
+            {
+              "name": "namespace",
+              "description": "The namespace to use to locate this document.",
+              "type": "string",
+              "required": true,
+              "defaultValue": "static-us"
+            },
+            {
+              "name": "locale",
+              "description": "The locale to reflect in localized data.",
+              "type": "string",
+              "required": false,
+              "defaultValue": "en_US"
+            }
+          ]
+        },
+        {
+          "name": "Recipe",
+          "description": "Returns a recipe by ID.",
+          "path": "/data/wow/recipe/{recipeId}",
+          "httpMethod": "GET",
+          "cnRegion": false,
+          "parameters": [
+            {
+              "name": "{recipeId}",
+              "description": "The ID of the recipe.",
+              "type": "integer",
+              "required": true,
+              "defaultValue": 1631
+            },
+            {
+              "name": "namespace",
+              "description": "The namespace to use to locate this document.",
+              "type": "string",
+              "required": true,
+              "defaultValue": "static-us"
+            },
+            {
+              "name": "locale",
+              "description": "The locale to reflect in localized data.",
+              "type": "string",
+              "required": false,
+              "defaultValue": "en_US"
+            }
+          ]
+        },
+        {
+          "name": "Recipe Media",
+          "description": "Returns media for a recipe by ID.",
+          "path": "/data/wow/media/recipe/{recipeId}",
+          "httpMethod": "GET",
+          "cnRegion": false,
+          "parameters": [
+            {
+              "name": "{recipeId}",
+              "description": "The ID of the recipe.",
+              "type": "integer",
+              "required": true,
+              "defaultValue": 1631
             },
             {
               "name": "namespace",
