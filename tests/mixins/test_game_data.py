@@ -19,6 +19,13 @@ class TestGameDataMixin:
 
     # Achievement API
 
+    def test_get_achievement(self, response_mock):
+        params = copy.deepcopy(self.params)
+        params['namespace'] = 'static-us'
+        self.api.get_achievement('us', 'static-us', 1234)
+        response_mock.assert_called_with(
+            'https://us.api.blizzard.com/data/wow/achievement/1234', params=params)
+
     def test_get_achievement_category_index(self, response_mock):
         self.api.get_achievement_category_index('us', 'dynamic-us')
         params = copy.deepcopy(self.params)
@@ -54,6 +61,14 @@ class TestGameDataMixin:
         response_mock.assert_called_with(
             'https://us.api.blizzard.com/data/wow/media/achievement/6', params=params)
 
+    # Auctions API
+
+    def test_get_auctions(self, response_mock):
+        params = copy.deepcopy(self.params)
+        self.api.get_auctions('us', 86)
+        response_mock.assert_called_with(
+            'https://us.api.blizzard.com/data/wow/connected-realm/86/auctions', params=params)
+
     # Azerite Essence API
 
     def test_get_azerite_essence_index(self, response_mock):
@@ -76,6 +91,21 @@ class TestGameDataMixin:
         params['namespace'] = 'dynamic-us'
         response_mock.assert_called_with(
             'https://us.api.blizzard.com/data/wow/media/azerite-essence/2', params=params)
+
+    # Boss API
+
+    def test_get_bosses(self, response_mock):
+        params = copy.deepcopy(self.params)
+        self.api.get_bosses('us')
+        response_mock.assert_called_with(
+            'https://us.api.blizzard.com/data/wow/journal-encounter/index', params=params)
+
+    def test_get_boss(self, response_mock):
+        params = copy.deepcopy(self.params)
+        params['namespace'] = 'static-us'
+        self.api.get_boss('us', 'static-us', 24723)
+        response_mock.assert_called_with(
+            'https://us.api.blizzard.com/data/wow/journal-encounter/24723', params=params)
 
     # Connected Realm API
 

@@ -17,6 +17,15 @@ class TestProfileMixin(object):
             }
         }
 
+    # Oauth API
+
+    def test_get_oauth_profile(self, response_mock):
+        params = copy.deepcopy(self.params)
+        params['namespace'] = 'profile-us'
+        self.api.get_oauth_profile('us', 'profile-us')
+        response_mock.assert_called_with(
+            'https://us.api.blizzard.com/profile/user/wow', params=params)
+
     # Character Achievements API
 
     def test_get_character_achievements_summary(self, response_mock):

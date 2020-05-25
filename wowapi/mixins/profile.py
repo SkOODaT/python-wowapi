@@ -1,6 +1,16 @@
 class ProfileMixin:
     """All Profile API methods"""
 
+    # OAuth API
+
+    def get_oauth_profile(self, region, namespace, **filters):
+        """
+        World of Warcraft Profile API - data about wow profile for oauth token
+        api.get_oauth_profile('us')
+        """
+        filters['namespace'] = namespace
+        return self.get_resource('profile/user/wow', region, **filters)
+
     # Character Achievements API
 
     def get_character_achievements_summary(

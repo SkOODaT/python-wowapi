@@ -17,39 +17,6 @@ class TestCommunityMixin:
             }
         }
 
-    def test_get_oauth_profile(self, response_mock):
-        params = copy.deepcopy(self.params)
-        params['namespace'] = 'profile-us'
-        self.api.get_oauth_profile('us', 'profile-us')
-        response_mock.assert_called_with(
-            'https://us.api.blizzard.com/profile/user/wow', params=params)
-
-    def test_get_achievement(self, response_mock):
-        params = copy.deepcopy(self.params)
-        params['namespace'] = 'static-us'
-        self.api.get_achievement('us', 'static-us', 1234)
-        response_mock.assert_called_with(
-            'https://us.api.blizzard.com/data/wow/achievement/1234', params=params)
-
-    def test_get_auctions(self, response_mock):
-        params = copy.deepcopy(self.params)
-        self.api.get_auctions('us', 86)
-        response_mock.assert_called_with(
-            'https://us.api.blizzard.com/data/wow/connected-realm/86/auctions', params=params)
-
-    def test_get_bosses(self, response_mock):
-        params = copy.deepcopy(self.params)
-        self.api.get_bosses('us')
-        response_mock.assert_called_with(
-            'https://us.api.blizzard.com/data/wow/journal-encounter/index', params=params)
-
-    def test_get_boss(self, response_mock):
-        params = copy.deepcopy(self.params)
-        params['namespace'] = 'static-us'
-        self.api.get_boss('us', 'static-us', 24723)
-        response_mock.assert_called_with(
-            'https://us.api.blizzard.com/data/wow/journal-encounter/24723', params=params)
-
     def test_get_realm_leaderboard(self, response_mock):
         params = copy.deepcopy(self.params)
         self.api.get_realm_leaderboard('us', 'silvermoon')

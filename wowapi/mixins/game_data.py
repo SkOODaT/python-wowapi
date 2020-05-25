@@ -3,6 +3,13 @@ class GameDataMixin:
 
     # Achievement API
 
+    def get_achievement(self, region, namespace, id, **filters):
+        """
+        api.get_achievement('us', 2144, locale='pt_BR')
+        """
+        filters['namespace'] = namespace
+        return self.get_resource('data/wow/achievement/{0}', region, *[id], **filters)
+
     def get_achievement_category_index(self, region, namespace, **filters):
         """
         Data Achievement API - Returns an index of achievement categories
@@ -38,6 +45,14 @@ class GameDataMixin:
         filters['namespace'] = namespace
         return self.get_resource('data/wow/media/achievement/{0}', region, *[id], **filters)
 
+    # Auctions API
+
+    def get_auctions(self, region, realm_id, **filters):
+        """
+        Auction API data status
+        """
+        return self.get_resource('data/wow/connected-realm/{0}/auctions', region, *[realm_id], **filters)
+
     # Azerite Essence API
 
     def get_azerite_essence_index(self, region, namespace, **filters):
@@ -60,6 +75,21 @@ class GameDataMixin:
         """
         filters['namespace'] = namespace
         return self.get_resource('data/wow/media/azerite-essence/{0}', region, *[id], **filters)
+
+    # Boss API
+
+    def get_bosses(self, region, **filters):
+        """
+        Boss API - Master list of bosses
+        """
+        return self.get_resource('data/wow/journal-encounter/index', region, **filters)
+
+    def get_boss(self, region, namespace, id, **filters):
+        """
+        Boss API - Boss details
+        """
+        filters['namespace'] = namespace
+        return self.get_resource('data/wow/journal-encounter/{0}', region, *[id], **filters)
 
     # Connected Realm API
 

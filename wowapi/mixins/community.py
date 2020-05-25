@@ -1,47 +1,6 @@
 class CommunityMixin:
     """All Community API methods"""
 
-    def get_oauth_profile(self, region, namespace, **filters):
-        """
-        World of Warcraft Profile API - data about wow profile for oauth token
-
-        ```python
-        api.get_oauth_profile('us')
-        ```
-        """
-        filters['namespace'] = namespace
-        return self.get_resource('profile/user/wow', region, **filters)
-
-    def get_achievement(self, region, namespace, id, **filters):
-        """
-        Achievement API
-
-        ```python
-        api.get_achievement('us', 2144, locale='pt_BR')
-        ```
-        """
-        filters['namespace'] = namespace
-        return self.get_resource('data/wow/achievement/{0}', region, *[id], **filters)
-
-    def get_auctions(self, region, realm_id, **filters):
-        """
-        Auction API data status
-        """
-        return self.get_resource('data/wow/connected-realm/{0}/auctions', region, *[realm_id], **filters)
-
-    def get_bosses(self, region, **filters):
-        """
-        Boss API - Master list of bosses
-        """
-        return self.get_resource('data/wow/journal-encounter/index', region, **filters)
-		
-    def get_boss(self, region, namespace, id, **filters):
-        """
-        Boss API - Boss details
-        """
-        filters['namespace'] = namespace
-        return self.get_resource('data/wow/journal-encounter/{0}', region, *[id], **filters)
-
     def get_realm_leaderboard(self, region, realm, **filters):
         """
         Challenge Mode API - realm leaderboard
