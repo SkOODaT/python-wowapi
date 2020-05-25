@@ -28,3 +28,4 @@ def save_spec_file(name, spec_file):
 
 if __name__ == '__main__':
     save_spec_file('WoW Game Data API', 'game-data-apis.json')
+    save_spec_file('WoW Profile Data API', 'profile-apis.json')

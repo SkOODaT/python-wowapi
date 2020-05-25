@@ -1,6 +1,4 @@
 import json
-import subprocess
-import tempfile
 from pathlib import Path
 
 import requests
@@ -35,3 +33,4 @@ def check_spec(id, spec_file):
 
 if __name__ == '__main__':
     assert not check_spec('WoW Game Data API', 'game-data-apis.json')
+    assert not check_spec('WoW Game Data API', 'profile-apis.json')
