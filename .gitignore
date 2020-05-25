@@ -12,3 +12,4 @@ env/
 .vscode
 cov_html/
 .pytest_cache
+Pipfile
