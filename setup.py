@@ -4,7 +4,7 @@ import os
 from setuptools import find_packages, setup
 
 
-__version__ = '3.0.0'
+__version__ = '3.1.0'
 
 
 def read(*parts):
@@ -34,7 +34,7 @@ setup(
     version=__version__,
     description=(
         "Python-wowapi is a client library for the "
-        "World of Warcraft Community, Data and Profile API's."
+        "World of Warcraft Game, Data and Profile API's."
     ),
     long_description=read('README.md'),
     long_description_content_type="text/markdown",
@@ -54,7 +54,6 @@ setup(
         'api',
         'wow',
         'auctionhouse',
-        'community',
         'game',
         'data',
         'profile',

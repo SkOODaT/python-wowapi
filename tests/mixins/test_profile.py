@@ -17,7 +17,7 @@ class TestProfileMixin(object):
             }
         }
 
-    # Oauth API
+    # OAuth API
 
     def test_get_oauth_profile(self, response_mock):
         params = copy.deepcopy(self.params)
